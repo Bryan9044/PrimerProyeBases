@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>Proyecto_1BSDD</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\Shared\Eliminar.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Shared\Eliminar.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Shared\Eliminar.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Shared\Eliminar.cshtml" />
+  </ItemGroup>
+
+</Project>
