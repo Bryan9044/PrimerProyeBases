@@ -1578,6 +1578,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="modal fade show" id="modalUsuario3" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true" style="display: @(Model.ShowModal20 ? "block" : "none");">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -1591,67 +1604,12 @@
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarUsuario">
                     <div class="modalUsuarioCedula">
-                        <label for="projectUSCedula" class="form-label">Cédula</label>
-                        <input type="text" class="form-control" id="projectUSCedula" name="projectUSCedula" required>
-                    </div>
-                    <div class="modalUSNombreCompleto">
-                        <label for="projectNombreUS" class="form-label">Nombre completo</label>
-                        <input type="text" class="form-control" id="projectNombreUS" name="projectNombreUS" required />
+                        <label for="projectUCedulaEli" class="form-label">Digite la cedula del usuario a  eliminar</label>
+                        <input type="text" class="form-control" id="projectUCedulaEli" name="projectCedulaEli" required>
                     </div>
                     <br />
-                    <div class="modalGeneroUS">
-                        <label for="projectGeneroUS" class="form-label">Género</label>
-                        <select name="projectGeneroUS" id="projectGeneroUS">
-                            <option value="Masculino">Masculino</option>
-                            <option value="Femenino">Femenino</option>
-                        </select>
-                    </div>
-                    <div class="modalRolUS">
-                        <label for="projectRolUS" class="form-label">Rol</label>
-                        <select name="projectRolUS" , id="projectRolUS"
-                                <option value="Edición">Edición</option>
-                                <option value="Visualización">Visualización</option>
-                                <option value="Reporteria">Reporteria</option>
-                                <option value="Vendedor">Vendedor</option>
-                            </select>
-                    </div>
 
 
-                    <div class="modalFechaNacimientoUS">
-                        <label for="projectNacimientoUS" class="form-label">Fecha de nacimiento</label>
-                        <input type="date" class="form-control" id="projectNacimientoUS" name="projectNacimientoUS" required</input>
-                    </div>
-                    <div class="modalResidenciaUS">
-                        <label for="projectResidenciaUS" class="form-label">Lugar de residencia</label>
-                        <input type="text" class="form-control" id="projectResidenciaUS" name="projectResidenciaUS" min="1" max="4" required />
-                    </div>
-
-                    <div class="modalTelefonoUS">
-                        <label for="projectTelefono" class="form-label">Número de teléfono</label>
-                        <input type="text" class="form-control" id="projectTelefono" name="projectTelefono" pattern="[0-9]{8}" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                    </div>
-
-
-
-                    <div class="modalFechaIngresoUS">
-                        <label for="projectIngresoUS" class="form-label">Fecha de ingreso</label>
-                        <input type="date" class="form-control" id="projectIngresoUS" name="projectIngresoUS" required</input>
-                    </div>
-
-                    <div class="modalSalarioUS">
-                        <label for="projectSalarioUS" class="form-label">Salario actual</label>
-                        <input type="number" id="projectSalarioUS" name="projectSalarioUS" step="0.01" required>
-                    </div>
-
-                    <div class="modalPuestoUS">
-                        <label for="projectPuestoUS" class="form-label">Puesto actual</label>
-                        <input type="text" class="form-control" id="projectPuestoUS" name="projectPuestoUS" required />
-                    </div>
-
-                    <div class="modalDepartamentoUS">
-                        <label for="projectDepartamentoUS" class="form-label">Departamento actual</label>
-                        <input type="text" class="form-control" id="projectDepartamentoUS" name="projectDepartamentoUS" required />
-                    </div>
                     <!-- Faltan los historicos --!>
 
 
@@ -1685,59 +1643,10 @@
             <div class="modal-body">
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarPlanilla">
-                    <div class="modalNumPlanilla">
-                        <label for="projectNumPlanilla" class="form-label">Número de planilla</label>
-                        <input type="number" class="form-control" id="projectNumPlanilla" name="projectNumPlanilla" required>
+                    <div class="modalCodigoPlanillaEli">
+                        <label for="projectCodigoPlanillaEli" class="form-label">Código de la planilla</label>
+                        <input type="number" class="form-control" id="projectCodigoPlanillaEli" name="projectCodigoPlanillaEli" required>
                     </div>
-                    <div class="modalUsuarioPlanilla">
-                        <label for="projectUsuarioPlanilla" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" id="projectUsuarioPlanilla" name="projectUsuarioPlanilla" required />
-                        <!-- Aqui hay que pasarle los usuarios-->
-                    </div>
-                    <br />
-                    <div class="modalPlanillaMensuales">
-                        <label for="projectPlanillaMensuales" class="form-label">Horas mensuales</label>
-                        <input type="number" class="form-control" id="projectPlanillaMensuales" name="projectPlanillaMensuales"></input>
-                    </div>
-
-
-
-                    <div class="modalPlanillaLaboradas">
-                        <label for="projectPlanillaLaboradas" class="form-label">Horas laboradas</label>
-                        <input type="date" class="form-control" id="projectPlanillaLaboradas" name="projectPlanillaLaboradas" required</input>
-                    </div>
-                    <div class="modalResidenciaUS">
-                        <label for="projectResidenciaUS" class="form-label">Lugar de residencia</label>
-                        <input type="text" class="form-control" id="projectResidenciaUS" name="projectResidenciaUS" min="1" max="4" required />
-                    </div>
-
-                    <div class="modalTelefonoUS">
-                        <label for="projectTelefono" class="form-label">Número de teléfono</label>
-                        <input type="text" class="form-control" id="projectTelefono" name="projectTelefono" pattern="[0-9]{8}" required oninput="this.value = this.value.replace(/[^0-9]/g, '')">
-                    </div>
-
-
-
-                    <div class="modalFechaIngresoUS">
-                        <label for="projectIngresoUS" class="form-label">Fecha de ingreso</label>
-                        <input type="date" class="form-control" id="projectIngresoUS" name="projectIngresoUS" required</input>
-                    </div>
-
-                    <div class="modalSalarioUS">
-                        <label for="projectSalarioUS" class="form-label">Salario actual</label>
-                        <input type="number" id="projectSalarioUS" name="projectSalarioUS" step="0.01" required>
-                    </div>
-
-                    <div class="modalPuestoUS">
-                        <label for="projectPuestoUS" class="form-label">Puesto actual</label>
-                        <input type="text" class="form-control" id="projectPuestoUS" name="projectPuestoUS" required />
-                    </div>
-
-                    <div class="modalDepartamentoUS">
-                        <label for="projectDepartamentoUS" class="form-label">Departamento actual</label>
-                        <input type="text" class="form-control" id="projectDepartamentoUS" name="projectDepartamentoUS" required />
-                    </div>
-                    <!-- Faltan los historicos --!>
 
 
                             <br />
@@ -1758,7 +1667,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar Proyecto</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar departamento</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -1766,28 +1675,14 @@
             <div class="modal-body">
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarPlanilla">
-                    <div class="modalCodigoDepartamento">
-                        <label for="projectCodigoDepar" class="form-label">Codigo del departamento</label>
-                        <input type="text" class="form-control" id="projectCodigoDepar" name="projectCodigoDepar" required>
+                    <div class="modalCodigoDepartamentoEli">
+                        <label for="projectCodigoDeparEli" class="form-label">Codigo del departamento</label>
+                        <input type="text" class="form-control" id="projectCodigoDeparEli" name="projectCodigoDeparEli" required>
                     </div>
                     <br />
-                    <div class="modalNombreDepartamento">
-                        <label for="projectNombreDepartamento" class="form-label">Departamentos</label>
-                        <select name="projectNombreDepartamento" id="projectNombreDepartamento">
-                            <option value="TI">TI</option>
-                            <option value="Ingenieria">Ingenieria</option>
-                            <option value="Seguridad">Seguridad</option>
-                            <option value="Ventas">Ventas</option>
-                            <option value="Marketing">Marketing</option>
-                            <option value="Bodega">Bodega</option>
-                            <option value="Logistica">Logistica</option>
-                        </select>
-                    </div>
+  
                     <br />
-
-
-                    <br />
-                    <button type="submit" class="btn btn-primary">Guardar departamento</button>
+                    <button type="submit" class="btn btn-primary">Eliminar departamento</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -1807,7 +1702,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar Proyecto</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar familia</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -1815,30 +1710,13 @@
             <div class="modal-body">
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarPlanilla">
-                    <div class="modalCodigoFamilias">
-                        <label for="projectCodigoFamilias" class="form-label">Codigo de la familia</label>
-                        <input type="text" class="form-control" id="projectCodigoFamilias" name="projectCodigoFamilias" required>
+                    <div class="modalCodigoFamiliasEli">
+                        <label for="projectCodigoFamiliasEli" class="form-label">Codigo de la familia</label>
+                        <input type="text" class="form-control" id="projectCodigoFamiliasEli" name="projectCodigoFamiliasEli" required>
                     </div>
                     <br />
-                    <label for="projectFamilias" class="form-label">Familias</label>
-                    <select name="projectFamilias" id="projectFamilias">
-                        <option value="Electrodomesticos">Electrodomesticos</option>
-                        <option value="Aseo">Aseo</option>
-                        <option value="Seguridad">Seguridad</option>
-                        <option value="Herramientas">Herramientas</option>
-                        <option value="Muebles">Muebles</option>
-                        <option value="Ropa">Ropa</option>
-                        <option value="Calzado">Calzado</option>
-                        <option value="Juguetes">Juguetes</option>
-                        <option value="Comida">Comida</option>
-                    </select>
-                    <div class="modalDescripcionFamilia">
-                        <label for="projectDescripcionFamilia" class="form-label">Descripción de la familia</label>
-                        <textarea class="form-control" id="projectDescripcionFamilia" name="projectDescripcionFamilia" rows="3" required></textarea>
-                    </div>
-
-                    <br />
-                    <button type="submit" class="btn btn-primary">Guardar familia</button>
+   
+                    <button type="submit" class="btn btn-primary">Eliminar familia</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -1856,7 +1734,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar Proyecto</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar zonas</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -1864,11 +1742,12 @@
             <div class="modal-body">
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarPlanilla">
-                    <div class="modalNumZonas">
-                        <label for="projectNumZonas" class="form-label"> Numero de la zona</label>
-                        <input type="text" class="form-control" id="projectNumZonas" name="projectNumZonas" required>
+                    <div class="modalNombreZonaEli">
+                        <label for="projectNombreZonaEli" class="form-label">Nombre de la  zona</label>
+                        <input type="text" class="form-control" id="projectNombreZonaEli" name="projectNombreZonaEli" required>
                     </div>
                     <br />
+                    <!--   
                     <label for="projectNombreZonas" class="form-label">Familias</label>
                     <select name="projectNombreZonas" id="projectNombreZonas">
                         <option value="Limón">Limón</option>
@@ -1882,10 +1761,7 @@
                         <option value="Jaco">Jaco</option>
                         <option value="Guanacaste">Guanacaste</option>
                     </select>
-                    <div class="modalZonaDescripcion">
-                        <label for="projectZonaDescripcion" class="form-label">descripcion de la zona</label>
-                        <textarea class="form-control" id="projectZonaDescripcion" name="projectZonaDescripcion" rows="3" required></textarea>
-                    </div>
+                    -->
 
                     <br />
                     <button type="submit" class="btn btn-primary">Guardar Proyecto</button>
@@ -1907,7 +1783,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar sectores</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar sector</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -1915,28 +1791,13 @@
             <div class="modal-body">
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarPlanilla">
-                    <div class="modalNumSector">
-                        <label for="projectNumSector" class="form-label"> Numero del sector</label>
-                        <input type="text" class="form-control" id="projectNumSector" name="projectNumSector" required>
-                    </div>
-                    <br />
-                    <label for="projectNombreSector" class="form-label">Sector</label>
-                    <select name="projectNombreZonas" id="projectNombreZonas">
-                        <option value="Pacifico sur">Pacifico sur</option>
-                        <option value="Pacifico norte">Pacifico norte</option>
-                        <option value="Pacifico central">Pacifico central</option>
-                        <option value="Caribe norte">Caribe norte</option>
-                        <option value="Caribe sur">Caribe sur</option>
-                        <option value="Valle central">Valle central</option>
-                        <option value="Zona norte">Zona norte</option>
-                    </select>
-                    <div class="modalSectorDescripcion">
-                        <label for="projectSectorDescripcion" class="form-label">descripcion del sector</label>
-                        <textarea class="form-control" id="projectSectorDescripcion" name="projectSectorDescripcion" rows="3" required></textarea>
+                    <div class="modalNombreSectorEli">
+                        <label for="projectNombreSectorEli" class="form-label"> Nombre del sector</label>
+                        <input type="text" class="form-control" id="projectNombreSectorEli" name="projectNombreSectorEli" required>
                     </div>
 
                     <br />
-                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <button type="submit" class="btn btn-primary">Eliminar</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -1954,7 +1815,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar Proyecto</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar estado</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -1964,24 +1825,12 @@
                 <form method="post" asp-page-handler="GuardarUsuario">
 
                     <div class="modalID">
-                        <label for="projectIDEstado" class="form-label">Asigne un numero</label>
+                        <label for="projectIDEstado" class="form-label">Escriba el ID</label>
                         <input type="number" class="form-control" id="projectIDEstado" name="projectIDEstado" required />
                     </div>
                     <br />
-                    <div class="modalTipoEstado">
-                        <label for="projectTipoEstado" class="form-label">Estado</label>
-                        <select name="projectTipoEstado" id="projectTipoEstado">
-                            <option value="Abierta">Abierta</option>
-                            <option value="Aprobado">Aprobado</option>
-                            <option value="Denegado">Denegado</option>
-                            <option value="Anulado">Anulado</option>
-                        </select>
-                    </div>
 
-
-
-                    <br />
-                    <button type="submit" class="btn btn-primary">Guardar estado</button>
+                    <button type="submit" class="btn btn-primary">Eliminar estado</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -2000,7 +1849,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar articulos</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar articulo</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -2009,40 +1858,18 @@
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarUsuario">
 
-                    <div class="codigoArticulo">
-                        <label for="projectCodigoArticulo" class="form-label">Asigne un codigo</label>
-                        <input type="text" class="form-control" id="projectCodigoArticulo" name="projectCodigoArticulo" required />
+                    <div class="codigoArticuloEli">
+                        <label for="projectCodigoArticuloEli" class="form-label">Asigne un codigo</label>
+                        <input type="text" class="form-control" id="projectCodigoArticuloEli" name="projectCodigoArticuloEli" required />
                     </div>
-                    <div class="nombreArticulo">
-                        <label for="projectNombreArticulo" class="form-label">Asigne un nombre</label>
-                        <input type="text" class="form-control" id="projectNombreArticulo" name="projectNombreArticulo" required />
+
+                    <div class="codigoArticuloEliF">
+                        <label for="projectCodigoArticuloEliF" class="form-label">Asigne el codigo de la familia</label>
+                        <input type="text" class="form-control" id="projectCodigoArticuloEliF" name="projectCodigoArticuloEliF" required />
                     </div>
 
                     <br />
-                    <div class="pesoArticulo">
-                        <label for="projectPesoArticulo" class="form-label">Asigne un peso</label>
-                        <input type="text" class="form-control" id="projectPesoArticulo" name="projectPesoArticulo" required />
-                    </div>
-                    <br />
-                    <div class="PrecioEstandar">
-                        <label for="projectPrecioEstandar" class="form-label">Asigne un precio estandar</label>
-                        <input type="number" class="form-control" id="projectPrecioEstandar" name="projectPrecioEstandar" required />
-                    </div>
-                    <br />
-                    <div class="Costo">
-                        <label for="projectCosto" class="form-label">Asigne un costo </label>
-                        <input type="number" class="form-control" id="projectCosto" name="projectCosto" required />
-                    </div>
-                    <div class="Descripción">
-                        <label for="projectDescripcion" class="form-label">Asigne una descripción </label>
-                        <textarea class="form-control" id="projectDescripcion" name="projectDescripcion" rows="3" required></textarea>
-                    </div>
-
-
-
-
-                    <br />
-                    <button type="submit" class="btn btn-primary">Guardar estado</button>
+                    <button type="submit" class="btn btn-primary">Eliminar articulo</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -2062,7 +1889,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar factura</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar factura</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -2071,28 +1898,28 @@
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarUsuario">
 
-                    <div class="codigoFactura">
-                        <label for="projectCodigoFactura" class="form-label">Asigne un codigo</label>
-                        <input type="text" class="form-control" id="projectCodigoFactura" name="projectNombreFactura" required />
+                    <div class="codigoFacturaEli">
+                        <label for="projectCodigoFacturaEli" class="form-label">Asigne un codigo</label>
+                        <input type="text" class="form-control" id="projectCodigoFacturaEli" name="projectCodigoFacturaEli" required />
                     </div>
-                    <div class="CedulaJuridica">
-                        <label for="projectCedulaJuridica" class="form-label">Asigne una cedula juridica</label>
-                        <input type="text" class="form-control" id="projectNombreArticulo" name="projectNombreArticulo" required />
+                    
+                    <div class="codigoClienteEli">
+                        <label for="projectcodigoClienteEli" class="form-label">Asigne un codigo de cliente</label>
+                        <input type="text" class="form-control" id="projectcodigoClienteEli" name="projectcodigoClienteEli" required />
+                    </div>
+                    
+                    <div class="codigoCotizacionEli">
+                        <label for="projectCotizacionEli" class="form-label">Asigne un codigo de cotizacion</label>
+                        <input type="text" class="form-control" id="projectCotizacionEli" name="projectCotizacionEli" required />
+                    </div>
+
+                    <div class="codigoEmpleadoEli">
+                        <label for="projectEmpleadoEli" class="form-label">Asigne un codigo de empleado</label>
+                        <input type="text" class="form-control" id="projectEmpleadoEli" name="projectEmpleadoEli" required />
                     </div>
 
                     <br />
-                    <div class="FechaFactura">
-                        <label for="projectFechaFactura" class="form-label">Asigne una fecha</label>
-                        <input type="date" class="form-control" id="projectFechaFactura" name="projectFechaFactura" required />
-                    </div>
-
-                    <!-- Hacer un apartado para cliente, telefono y empleado-->
-
-
-
-
-                    <br />
-                    <button type="submit" class="btn btn-primary">Guardar estado</button>
+                    <button type="submit" class="btn btn-primary">Eliminar factura</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -2112,7 +1939,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar factura</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar cliente</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -2121,41 +1948,13 @@
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarUsuario">
 
-                    <div class="cedulaCliente">
-                        <label for="projectCedulaCliente" class="form-label">Asigne una cedula</label>
-                        <input type="text" class="form-control" id="projectCedulaCliente" name="projectCedulaCliente" required />
+                    <div class="cedulaClienteEli">
+                        <label for="projectCedulaClienteEli" class="form-label">Asigne una cedula</label>
+                        <input type="text" class="form-control" id="projectCedulaClienteEli" name="projectCedulaClienteEli" required />
                     </div>
-                    <div class="telefono">
-                        <label for="projectTelefonoCliente" class="form-label">Asigne un telefono</label>
-                        <input type="text" class="form-control" id="projectTelefonoCliente" name="projectTelefonoCliente" required />
-                    </div>
-
+       
                     <br />
-                    <div class="GeneroCliente">
-                        <label for="projectGeneroCliente" class="form-label">Género</label>
-                        <select name="projectGeneroCliente" id="projectGeneroCliente">
-                            <option value="Masculino">Masculino</option>
-                            <option value="Femenino">Femenino</option>
-                        </select>
-                    </div>
-                    <div class="NombreCliente">
-                        <label for="projectNombreCliente" class="form-label">Asigne un nombre</label>
-                        <input type="text" class="form-control" id="projectNombreCliente" name="projectNombreCliente" required />
-                    </div>
-                    <div class="CorreoElectronicoCliente">
-                        <label for="projectCorreCliente" class="form-label">Asigne un correo</label>
-                        <input type="text" class="form-control" id="projectCorreCliente" name="projectCorreCliente" required />
-                    </div>
-                    <div class="faxCliente">
-                        <label for="projectFax" class="form-label">Asigne un fax</label>
-                        <input type="text" class="form-control" id="projectFax" name="projectFax" required />
-                    </div>
-                    <div class="CelularCliente">
-                        <label for="projectCelularCliente" class="form-label">Asigne un celular</label>
-                        <input type="text" class="form-control" id="projectCelularCliente" name="projectCelularCliente" required />
-                    </div>
-                    <br />
-                    <button type="submit" class="btn btn-primary">Guardar estado</button>
+                    <button type="submit" class="btn btn-primary">Eliminar</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -2175,7 +1974,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar factura</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar lista de articulos</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -2184,19 +1983,13 @@
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarUsuario">
                     <!--Hacer un apartado para seleccionar bodegas, igual de producto y la cantidad de este -->
-                    <div class="Identificador">
-                        <label for="projectIdentificador" class="form-label">Asigne un identificador</label>
-                        <input type="text" class="form-control" id="projectIdentificador" name="projectIdentificador" required />
-                    </div>
-                    <div class="cantidadProducto">
-                        <label for="projectcantidadProducto" class="form-label">Asigne una cantidad</label>
-                        <input type="number" class="form-control" id="projectcantidadProducto" name="projectcantidadProducto" required />
+                    <div class="modalIDListaEli">
+                        <label for="projectIDListaEli" class="form-label">Asigne un identificador</label>
+                        <input type="text" class="form-control" id="projectIDListaEli" name="projectIDListaEli" required />
                     </div>
 
                     <br />
-
-                    <br />
-                    <button type="submit" class="btn btn-primary">Guardar estado</button>
+                    <button type="submit" class="btn btn-primary">Eliminar</button>
                 </form>
             </div>
             <div class="modal-footer">
@@ -2215,7 +2008,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar factura</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar cotizacion</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -2224,52 +2017,18 @@
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarUsuario">
                     <!--Hacer un apartado para seleccionar bodegas,la cedula del empleado y del cliente-->
-                    <div class="CodigoCotizacion">
-                        <label for="projectCodigoCotizacion" class="form-label">Asigne un codigo</label>
-                        <input type="text" class="form-control" id="projectCodigoCotizacion" name="projectCodigoCotizacion" required />
+                    <div class="CodigoCotizacionEli">
+                        <label for="projectCodigoCotizacionEli" class="form-label">Asigne un codigo</label>
+                        <input type="text" class="form-control" id="projectCodigoCotizacionEli" name="projectCodigoCotizacionEli" required />
+                    </div>
+                    <div class="codigoEmpleadoEli">
+                        <label for="projectEmpleadoEli" class="form-label">Asigne un codigo de empleado</label>
+                        <input type="text" class="form-control" id="projectEmpleadoEli" name="projectEmpleadoEli" required />
                     </div>
                     <br />
-                    <div class="ordenDeCompra">
-                        <label for="projectOrdenDeCompra" class="form-label">Asigne una cantidad</label>
-                        <input type="number" class="form-control" id="projectOrdenDeCompra" name="projectOrdenDeCompra" required />
-                    </div>
-                    <br />
-                    <div class="FechaCotizacion">
-                        <label for="projectFechaCotizacion" class="form-label">Asigne una fecha de cotizacion</label>
-                        <input type="date" class="form-control" id="projectFechaCotizacion" name="projectFechaCotizacion" required />
-                    </div>
-
-                    <br />
-                    <div class="MesProyeCierre">
-                        <label for="projectMesProyeCierre" class="form-label">Asigne un mes de cierre</label>
-                        <select name="projectMesProyeCierre" id="projectMesProyeCierre">
-                            <option value="Enero">Enero</option>
-                            <option value="Febrero">Febrero</option>
-                            <option value="Marzo">Marzo</option>
-                            <option value="Abril">Abril</option>
-                            <option value="Mayo">Mayo</option>
-                            <option value="Junio">Junio</option>
-                            <option value="Jullio">Jullio</option>
-                            <option value="Agosto">Agosto</option>
-                            <option value="Setiembre">Setiembre</option>
-                            <option value="Octubre">Octubre</option>
-                            <option value="Noviembre">Noviembre</option>
-                            <option value="Diciembre">Diciembre</option>
-
-                        </select>
-                    </div>
-                    <br />
-                    <div class="FechaCierreFinal">
-                        <label for="projectFechaCierreFinal" class="form-label">Asigne una fecha de cierre</label>
-                        <input type="date" class="form-control" id="projectFechaCierreFinal" name="projectFechaCierreFinal" required />
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Guardar estado</button>
-
-                    <br />
-                    <div class="TipoCotizacion">
-                        <label for="projectTipoCotizacion" class="form-label">Asigne un tipo de cotización</label>
-                        <input type="date" class="form-control" id="projectTipoCotizacion" name="projectTipoCotizacion" required />
+                    <div class="codigoClienteEli">
+                        <label for="projectcodigoClienteEli" class="form-label">Asigne un codigo de cliente</label>
+                        <input type="number" class="form-control" id="projectcodigoClienteEli" name="projectcodigoClienteEli" required />
                     </div>
 
                     <button type="submit" class="btn btn-primary">Guardar estado</button>
@@ -2291,7 +2050,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Registrar Codigo de casos</h5>
+                <h5 class="modal-title" id="modalLabel">Eliminar casos</h5>
                 <form method="post" asp-page-handler="CerrarModal">
                     <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </form>
@@ -2300,34 +2059,11 @@
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
                 <form method="post" asp-page-handler="GuardarUsuario">
                     <!--Hacer un apartado para seleccionar bodegas,la cedula del empleado y del cliente-->
-                    <div class="CodigoCaso">
-                        <label for="projectCodigoCaso" class="form-label">Asigne un codigo</label>
-                        <input type="text" class="form-control" id="projectCodigoCaso" name="projectCodigoCaso" required />
+                    <div class="CodigoCasoEli">
+                        <label for="projectCodigoCasoEli" class="form-label">Asigne un codigo</label>
+                        <input type="text" class="form-control" id="projectCodigoCasoEli" name="projectCodigoCasoEli" required />
                     </div>
-                    <br />
-                    <div class="NombreCuenta">
-                        <label for="projectNombreCuenta" class="form-label">Asigne un nombre</label>
-                        <input type="text" class="form-control" id="projectNombreCuenta" name="projectNombreCuenta" required />
-                    </div>
-                    <br />
-                    <div class="Asunto">
-                        <label for="projectAsunto" class="form-label">Asigne un asunto</label>
-                        <input type="date" class="form-control" id="projectAsunto" name="projectAsunto" required />
-                    </div>
-                    <div class="NombreContacto">
-                        <label for="projectNombreContacto" class="form-label">Asigne un nombre de contacto</label>
-                        <input type="date" class="form-control" id="projectAsunto" name="projectNombreContacto" required />
-                    </div>
-                    <div class="Descripción">
-                        <label for="projectDescripcion" class="form-label">Asigne una ubicaciom</label>
-                        <textarea class="form-control" id="projectDescripcion" name="projectDescripcion" rows="3" required></textarea>
 
-                    </div>
-                    <div class="Ubicacion">
-                        <label for="projectUbicacion" class="form-label">Asigne un nombre de contacto</label>
-                        <textarea class="form-control" id="projectUbicacion" name="projectUbicacion" rows="3" required></textarea>
-
-                    </div>
                     <button type="submit" class="btn btn-primary">Guardar estado</button>
                 </form>
             </div>
