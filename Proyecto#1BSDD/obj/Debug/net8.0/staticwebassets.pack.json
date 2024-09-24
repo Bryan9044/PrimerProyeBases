@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Proyecto#1BSDD.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\wwwroot\\Imagenes\\casita.png",
+      "PackagePath": "staticwebassets\\Imagenes\\casita.png"
+    },
+    {
+      "Id": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\wwwroot\\Imagenes\\r.jfif",
+      "PackagePath": "staticwebassets\\Imagenes\\r.jfif"
+    },
+    {
       "Id": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

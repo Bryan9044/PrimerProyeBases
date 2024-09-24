@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Pages\Shared\Eliminar.cshtml" />
+    <None Include="Pages\Eliminar.cshtml" />
   </ItemGroup>
 
 </Project>

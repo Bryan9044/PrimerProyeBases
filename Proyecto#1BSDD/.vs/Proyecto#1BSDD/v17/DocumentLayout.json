@@ -7,32 +7,28 @@
       "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\pages\\shared\\eliminar.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:pages\\shared\\eliminar.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\pages\\eliminar.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:pages\\eliminar.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\pages\\shared\\eliminar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:pages\\shared\\eliminar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\pages\\modificar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:pages\\modificar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\pages\\modificar.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:pages\\modificar.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|c:\\users\\bryan\\source\\repos\\proyecto#1bsdd\\pages\\modificar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{437DC475-C2BE-4798-A4C3-9AF7343F0C8D}|Proyecto#1BSDD.csproj|solutionrelative:pages\\modificar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,46 +38,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Eliminar.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Shared\\Eliminar.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Shared\\Eliminar.cshtml.cs",
-              "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Shared\\Eliminar.cshtml.cs",
-              "RelativeToolTip": "Pages\\Shared\\Eliminar.cshtml.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAA0wCEAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-23T05:25:26.479Z",
-              "EditorCaption": ""
+              "DocumentIndex": 2,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AQIAAGAAAAAAAAAAAAAAAGYAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-09-24T13:59:55.007Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
+              "Title": "Eliminar.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Eliminar.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Eliminar.cshtml.cs",
+              "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Eliminar.cshtml.cs",
+              "RelativeToolTip": "Pages\\Eliminar.cshtml.cs",
+              "ViewState": "AQIAAHoAAAAAAAAAAAAcwIUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T13:46:29.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Index.cshtml.cs",
               "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Index.cshtml.cs",
               "RelativeToolTip": "Pages\\Index.cshtml.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAmwD0AAAAFAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwGMBAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T20:36:27.845Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-24T13:45:12.809Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Eliminar.cshtml",
-              "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Shared\\Eliminar.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Shared\\Eliminar.cshtml",
-              "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Shared\\Eliminar.cshtml",
-              "RelativeToolTip": "Pages\\Shared\\Eliminar.cshtml",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAAcAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-23T05:21:40.956Z",
-              "EditorCaption": ""
+              "DocumentIndex": 5,
+              "Title": "Modificar.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Modificar.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Modificar.cshtml.cs",
+              "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Modificar.cshtml.cs",
+              "RelativeToolTip": "Pages\\Modificar.cshtml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAG0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T05:26:55.982Z"
             },
             {
               "$type": "Document",
@@ -91,61 +96,35 @@
               "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABcAAAAAAAAAAADwvyYAAAAbAAAA",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAqwGQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-22T21:30:23.383Z",
+              "WhenOpened": "2024-09-24T13:51:03.227Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Modificar.cshtml",
-              "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Modificar.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Modificar.cshtml",
-              "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Modificar.cshtml",
-              "RelativeToolTip": "Pages\\Modificar.cshtml",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAAAAQAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-22T21:26:56.71Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Index.cshtml",
               "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Index.cshtml",
               "RelativeToolTip": "Pages\\Index.cshtml",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAqwFEAAAARAAAA",
+              "ViewState": "AQIAAAsBAAAAAAAAAAAAAAwAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-09-20T20:06:54.689Z",
+              "WhenOpened": "2024-09-24T05:50:39.237Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Modificar.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Modificar.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Modificar.cshtml.cs",
-              "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Modificar.cshtml.cs",
-              "RelativeToolTip": "Pages\\Modificar.cshtml.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAAAEAAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-22T21:29:12.377Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "wwwroot\\css\\site.css",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAswCEAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-20T20:35:29.333Z"
+              "Title": "Modificar.cshtml",
+              "DocumentMoniker": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Modificar.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Modificar.cshtml",
+              "ToolTip": "C:\\Users\\bryan\\source\\repos\\Proyecto#1BSDD\\Pages\\Modificar.cshtml",
+              "RelativeToolTip": "Pages\\Modificar.cshtml",
+              "ViewState": "AQIAAP4CAAAAAAAAAAAAAAQDAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-23T22:40:17.509Z"
             }
           ]
         }
