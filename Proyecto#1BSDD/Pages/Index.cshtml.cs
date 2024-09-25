@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using System.Collections.Generic;
 
 public class IndexModel : PageModel
 {
@@ -10,7 +12,6 @@ public class IndexModel : PageModel
     {
         _configuration = configuration;
     }
-
 
     // Propiedades para mostrar u ocultar los modales
     public bool ShowModal1 { get; set; }
@@ -55,7 +56,22 @@ public class IndexModel : PageModel
     public bool ShowModal43 { get; set; }
     public bool ShowModal44 { get; set; }
     public bool ShowModal45 { get; set; }
+    public bool ShowModal46 { get; set; }
+    public bool ShowModal47 { get; set; }
+    public bool ShowModal48 { get; set; }
+    public bool ShowModal49 { get; set; }
 
+    // Cambiado a List<string> para almacenar códigos de departamentos
+    public List<string> Departamentos { get; set; } = new List<string>(); // Inicialización
+    public List<string> Familias { get; set; } = new List<string>(); // Inicialización
+    public List<string> Zonas { get; set; } = new List<string>(); // Inicialización
+    public List<string> Sectores { get; set; } = new List<string>(); // Inicialización
+    public List<string> Estados { get; set; } = new List<string>(); // Inicialización
+    public List<string> Prioridades { get; set; } = new List<string>();
+    public List<string> TipoCasos { get; set; } = new List<string>();
+    public List<string> Probabilidades { get; set; } = new List<string>();
+    public List<string> Puestos { get; set; } = new List<string>();
+    public List<string> Generos { get; set; } = new List<string>();
 
     // Método GET para inicializar los valores
     public void OnGet()
@@ -72,6 +88,118 @@ public class IndexModel : PageModel
         ShowModal10 = false;
         ShowModal11 = false;
         ShowModal12 = false;
+
+        // Inicializar listas
+        Familias = new List<string>();
+        Zonas = new List<string>();
+        Sectores = new List<string>();
+        Estados = new List<string>();
+        Prioridades = new List<string>();
+        TipoCasos = new List<string>();
+        Probabilidades = new List<string>();
+        Puestos = new List<string>();
+        Generos = new List<string>();
+        // Obtener los departamentos de la base de datos
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT Codigo FROM Departamento"; // Asegúrate de que este campo existe en tu tabla
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Departamentos.Add(reader.GetString(0)); // Agregar el código del departamento como string
+                    }
+                }
+            }
+        }
+
+        // Aquí podrías agregar lógica adicional para llenar Familias, Zonas, Sectores y Estados si es necesario
+
+
+
+
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT CodigoFamilia FROM Familia";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Familias.Add(reader.GetString(0));
+                    }
+                }
+            }
+
+
+        }
+
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT Nombre FROM Zona";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Zonas.Add(reader.GetString(0));
+                    }
+                }
+            }
+
+
+
+
+        }
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT Nombre FROM Sector";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Sectores.Add(reader.GetString(0));
+                    }
+                }
+            }
+
+
+        }
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT TipoEstado FROM Estado"; // Asegúrate de que este campo existe en tu tabla
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Estados.Add(reader.GetString(0)); // Asegúrate de que esto se ajusta a tu tipo de datos
+                    }
+                }
+            }
+
+
+        }
+
+
 
     }
 
@@ -351,7 +479,276 @@ public class IndexModel : PageModel
     public IActionResult OnPostAbrirModal45()
     {
 
-        ShowModal44 = true;
+        ShowModal45 = true;
         return Page();
     }
+    public IActionResult OnPostAbrirModal46()
+    {
+
+        ShowModal46 = true;
+        return Page();
+    }
+    public IActionResult OnPostAbrirModal47()
+    {
+
+        ShowModal47 = true;
+        return Page();
+    }
+    public IActionResult OnPostAbrirModal48()
+    {
+
+        ShowModal48 = true;
+        return Page();
+    }
+    public IActionResult OnPostAbrirModal49()
+    {
+
+        ShowModal49 = true;
+        return Page();
+    }
+
+
+
+    public IActionResult OnPostGuardarDepartamento(string projectCodigoDepar, string projectNombreDepartamento)
+    {
+        Console.WriteLine($"Código Departamento: {projectCodigoDepar}, Nombre Departamento: {projectNombreDepartamento}");
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "INSERT INTO Departamento (Codigo, Nombre) VALUES (@Codigo, @Nombre)";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Codigo", projectCodigoDepar);
+                command.Parameters.AddWithValue("@Nombre", projectNombreDepartamento);
+                command.ExecuteNonQuery();
+            }
+
+        }
+
+        return RedirectToPage();
+    }
+
+
+
+
+    public IActionResult OnPostEliminarDepartamento(string projectCodigoDeparEli)
+    {
+        Console.WriteLine($"Código Departamento a Eliminar: {projectCodigoDeparEli}");
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "DELETE FROM Departamento WHERE Codigo = @Codigo";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Codigo", projectCodigoDeparEli);
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    Console.WriteLine("Departamento eliminado correctamente.");
+                }
+                else
+                {
+                    Console.WriteLine("No se encontró un departamento con ese código.");
+                }
+            }
+        }
+
+        // Actualizar la lista de departamentos después de la eliminación
+        return RedirectToPage();
+    }
+
+
+
+
+
+
+
+
+
+    public IActionResult OnPostGuardarFamilias(string projectCodigoFamilias, string projectFamilias, string projectDescripcionFamilia, byte projectActivoF)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "INSERT INTO Familia (CodigoFamilia, Nombre,Descripcion,Activo) VALUES (@CodigoFamilia, @Nombre,@Descripcion,@Activo)";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@CodigoFamilia", projectCodigoFamilias);
+                command.Parameters.AddWithValue("@Nombre", projectFamilias);
+                command.Parameters.AddWithValue("@Descripcion", projectDescripcionFamilia);
+                command.Parameters.AddWithValue("@Activo", projectActivoF);
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+        return RedirectToPage();
+    }
+
+
+    public IActionResult OnPostEliminarFamilias(string projectCodigoFamiliaEli)
+    {
+        Console.WriteLine($"Código Familia a Eliminar: {projectCodigoFamiliaEli}");
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "DELETE FROM Familia WHERE CodigoFamilia = @CodigoFamilia";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@CodigoFamilia", projectCodigoFamiliaEli);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        // Actualizar la lista de departamentos después de la eliminación
+        return RedirectToPage();
+    }
+
+
+    public IActionResult OnPostEliminarZonas(String projectNombreEliZ)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "DELETE FROM Zona WHERE Nombre = @Nombre";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Nombre", projectNombreEliZ);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        // Actualizar la lista de departamentos después de la eliminación
+        return RedirectToPage();
+    }
+
+    public IActionResult OnPostGuardarSector(string projectNombreSector, string projectSectorDescripcion)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "INSERT INTO Sector (Nombre,Descripcion) VALUES (@Nombre,@Descripcion)";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Nombre", projectNombreSector);
+                command.Parameters.AddWithValue("@Descripcion", projectSectorDescripcion);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+        return RedirectToPage();
+    }
+
+    public IActionResult OnPostEliminarSectores(String projectNombreEliS)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "DELETE FROM Sector WHERE Nombre = @Nombre";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Nombre", projectNombreEliS);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        // Actualizar la lista de departamentos después de la eliminación
+        return RedirectToPage();
+    }
+
+
+    public IActionResult OnPostGuardarEstado(string projectTipoEstado, string projectEstadoDescripcion)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "INSERT INTO Estado (TipoEstado,Descripcion) VALUES (@TipoEstado,@Descripcion)";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@TipoEstado", projectTipoEstado);
+                command.Parameters.AddWithValue("@Descripcion", projectEstadoDescripcion);
+
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+        return RedirectToPage();
+    }
+
+    public IActionResult OnPostEliminarEstados(String projectTipoEstadoEli)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "DELETE FROM Estado WHERE TipoEstado = @TipoEstado";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@TipoEstado", projectTipoEstadoEli);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        // Actualizar la lista de departamentos después de la eliminación
+        return RedirectToPage();
+    }
+
+
+
+
+    public IActionResult OnPostGuardarProbabilidades(byte projectPorcentaje, string projectNombreProb)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "INSERT INTO Probabilidad (Porcentaje , ProbabilidadEstimada) VALUES (@Porcentaje, @ProbabilidadEstimada)";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Porcentaje", projectPorcentaje);
+                command.Parameters.AddWithValue("@ProbabilidadEstimada", projectNombreProb);
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+        return RedirectToPage();
+    }
+
 }
+
+
+
+

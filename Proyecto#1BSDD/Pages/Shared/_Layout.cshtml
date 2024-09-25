@@ -6,7 +6,7 @@
     <title>@ViewData["Title"] - Proyecto_1BSDD</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Proyecto_1BSDD.styles.css" asp-append-version="true" />
+    <!--    <link rel="stylesheet" href="~/Proyecto_1BSDD.styles.css" asp-append-version="true" />-->
 </head>
 <body>
     <header class="cabeza">
@@ -24,7 +24,9 @@
                                 Registrar
                             </a>
                             <ul class="dropdown-menu">
+                                <form method="post" asp-page-handler="GuardarDepartamento">
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalDepartamento">Departamento</a></li>
+                                </form>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalUsuario">Usuario</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPlanilla">Planilla</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalArticulos">Artículos</a></li>
@@ -38,6 +40,10 @@
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCotizacion">Cotización</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCasos">Casos</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalTelefonosLocales">Teléfonos Locales</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPrioridad">Prioridad</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalTipoCaso">TipoCaso</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalProbabilidad">Probabilidad</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPuesto">Puesto</a></li>
                             </ul>
                         </li>
 
@@ -60,6 +66,10 @@
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCotizacion2">Cotización</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCasos2">Casos</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalTelefonosLocales2">Teléfonos Locales</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPrioridad2">Prioridad</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalTipoCaso2">TipoCaso</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPobabilidad2">probabilidad</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPuesto2">Puesto</a></li>
                             </ul>
                         </li>
 
@@ -68,6 +78,7 @@
                                 Eliminar
                             </a>
                             <ul class="dropdown-menu">
+
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalDepartamento3">Departamento</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalUsuario3">Usuario</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPlanilla3">Planilla</a></li>
@@ -82,6 +93,10 @@
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCotizacion3">Cotización</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalCasos3">Casos</a></li>
                                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalTelefonosLocales3">Teléfonos Locales</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPrioridad3">Prioridad</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalTipoCaso3">TipoCaso</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalProbabilidad3">Probabilidad</a></li>
+                                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalPuesto3">Puesto</a></li>
                             </ul>
                         </li>
 
