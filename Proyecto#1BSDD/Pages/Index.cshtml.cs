@@ -3,6 +3,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
+using System.Globalization;
 
 public class IndexModel : PageModel
 {
@@ -61,19 +62,19 @@ public class IndexModel : PageModel
     public bool ShowModal48 { get; set; }
     public bool ShowModal49 { get; set; }
 
-    // Cambiado a List<string> para almacenar códigos de departamentos
-    public List<string> Departamentos { get; set; } = new List<string>(); // Inicialización
-    public List<string> Familias { get; set; } = new List<string>(); // Inicialización
-    public List<string> Zonas { get; set; } = new List<string>(); // Inicialización
-    public List<string> Sectores { get; set; } = new List<string>(); // Inicialización
-    public List<string> Estados { get; set; } = new List<string>(); // Inicialización
+   
+    public List<string> Departamentos { get; set; } = new List<string>(); 
+    public List<string> Familias { get; set; } = new List<string>(); 
+    public List<string> Zonas { get; set; } = new List<string>();
+    public List<string> Sectores { get; set; } = new List<string>();
+    public List<string> Estados { get; set; } = new List<string>(); 
     public List<string> Prioridades { get; set; } = new List<string>();
     public List<string> TipoCasos { get; set; } = new List<string>();
     public List<string> Probabilidades { get; set; } = new List<string>();
     public List<string> Puestos { get; set; } = new List<string>();
     public List<string> Generos { get; set; } = new List<string>();
+    public List<string> TipoPagos { get; set; } = new List<string>();
 
-    // Método GET para inicializar los valores
     public void OnGet()
     {
         ShowModal1 = false;
@@ -99,26 +100,25 @@ public class IndexModel : PageModel
         Probabilidades = new List<string>();
         Puestos = new List<string>();
         Generos = new List<string>();
-        // Obtener los departamentos de la base de datos
+        TipoPagos = new List<string>();
         string connectionString = _configuration.GetConnectionString("DefaultConnection");
 
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
-            string query = "SELECT Codigo FROM Departamento"; // Asegúrate de que este campo existe en tu tabla
+            string query = "SELECT Codigo FROM Departamento";
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Departamentos.Add(reader.GetString(0)); // Agregar el código del departamento como string
+                        Departamentos.Add(reader.GetString(0)); 
                     }
                 }
             }
         }
 
-        // Aquí podrías agregar lógica adicional para llenar Familias, Zonas, Sectores y Estados si es necesario
 
 
 
@@ -184,14 +184,86 @@ public class IndexModel : PageModel
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
-            string query = "SELECT TipoEstado FROM Estado"; // Asegúrate de que este campo existe en tu tabla
+            string query = "SELECT TipoEstado FROM Estado"; 
             using (SqlCommand command = new SqlCommand(query, connection))
             {
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        Estados.Add(reader.GetString(0)); // Asegúrate de que esto se ajusta a tu tipo de datos
+                        Estados.Add(reader.GetString(0)); 
+                    }
+                }
+            }
+
+
+        }
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT Tipocaso FROM TipoCaso"; 
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        TipoCasos.Add(reader.GetString(0)); 
+                    }
+                }
+            }
+
+
+        }
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT Nombre FROM Puesto";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Puestos.Add(reader.GetString(0));
+                    }
+                }
+            }
+
+
+        }
+
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT TipoPrioridad FROM Prioridad";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Prioridades.Add(reader.GetString(0));
+                    }
+                }
+            }
+
+
+        }
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "SELECT tipoPago FROM TipoPago";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        TipoPagos.Add(reader.GetString(0));
                     }
                 }
             }
@@ -201,9 +273,10 @@ public class IndexModel : PageModel
 
 
 
+
+
     }
 
-    // Método POST para abrir un modal específico
     public IActionResult OnPostAbrirModal()
     {
         ShowModal1 = true;
@@ -560,7 +633,6 @@ public class IndexModel : PageModel
             }
         }
 
-        // Actualizar la lista de departamentos después de la eliminación
         return RedirectToPage();
     }
 
@@ -613,7 +685,6 @@ public class IndexModel : PageModel
             }
         }
 
-        // Actualizar la lista de departamentos después de la eliminación
         return RedirectToPage();
     }
 
@@ -634,7 +705,6 @@ public class IndexModel : PageModel
             }
         }
 
-        // Actualizar la lista de departamentos después de la eliminación
         return RedirectToPage();
     }
 
@@ -676,7 +746,6 @@ public class IndexModel : PageModel
             }
         }
 
-        // Actualizar la lista de departamentos después de la eliminación
         return RedirectToPage();
     }
 
@@ -719,7 +788,6 @@ public class IndexModel : PageModel
             }
         }
 
-        // Actualizar la lista de departamentos después de la eliminación
         return RedirectToPage();
     }
 
@@ -747,6 +815,259 @@ public class IndexModel : PageModel
         return RedirectToPage();
     }
 
+
+
+
+    public IActionResult OnPostGuardarTiposCaso(String projectTipoCaso, string projectDescripcionCaso)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "INSERT INTO TipoCaso (Tipocaso , Descripcion) VALUES (@Tipocaso, @Descripcion)";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Tipocaso", projectTipoCaso);
+                command.Parameters.AddWithValue("@Descripcion", projectDescripcionCaso);
+                command.ExecuteNonQuery();
+            }
+        }
+
+
+        return RedirectToPage();
+    }
+
+
+    public IActionResult OnPostEliminarTiposCaso(String projectTipoEstadoEli)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "DELETE FROM TipoCaso WHERE Tipocaso = @Tipocaso";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Tipocaso", projectTipoEstadoEli);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        return RedirectToPage();
+    }
+
+
+    public IActionResult OnPostGuardarPuestos(string projectnombrePuesto, string projectSalarioPuesto, string projectTipoPuesto)
+    {
+        Console.WriteLine($"Nombre del puesto recibido: {projectnombrePuesto}");
+        Console.WriteLine($"Salario del puesto recibido: {projectSalarioPuesto}");
+        Console.WriteLine($"Tipo de puesto recibido: {projectTipoPuesto}");
+
+        decimal salarioDecimal;
+        var cultureInfo = new CultureInfo("en-US"); 
+
+        if (!decimal.TryParse(projectSalarioPuesto, NumberStyles.Any, cultureInfo, out salarioDecimal))
+        {
+
+            Console.WriteLine("Error: el salario no es un número decimal válido.");
+            ModelState.AddModelError(string.Empty, "El salario debe ser un número decimal válido.");
+            return Page(); 
+        }
+
+        Console.WriteLine("Conectando a la base de datos...");
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                Console.WriteLine("Conexión abierta con éxito.");
+
+                string query = "INSERT INTO Puesto (Nombre, Salario, TipoPuesto) VALUES (@Nombre, @Salario, @TipoPuesto)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nombre", projectnombrePuesto);
+                    command.Parameters.AddWithValue("@Salario", salarioDecimal);  // Pasa el valor decimal correctamente
+                    command.Parameters.AddWithValue("@TipoPuesto", projectTipoPuesto);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine($"Número de filas afectadas: {rowsAffected}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error en la base de datos: {ex.Message}");
+            ModelState.AddModelError(string.Empty, "Hubo un error al intentar guardar los datos en la base de datos.");
+            return Page();
+        }
+
+        Console.WriteLine("Datos guardados con éxito.");
+        return RedirectToPage();
+    }
+
+
+    public IActionResult OnPostEliminarPuestos(String projectNombrePEli)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "DELETE FROM Puesto WHERE Nombre = @Nombre";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@Nombre", projectNombrePEli);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        return RedirectToPage();
+    }
+
+
+
+    public IActionResult OnPostGuardarPrioridad(string projectPrioridad)
+    {
+
+        Console.WriteLine($"Prioridad recibida: {projectPrioridad}");
+
+
+
+        int nivel = 0;
+
+
+        if (projectPrioridad.Equals("Baja", StringComparison.OrdinalIgnoreCase))
+        {
+            nivel = 1;
+        }
+        else if (projectPrioridad.Equals("Media", StringComparison.OrdinalIgnoreCase))
+        {
+            nivel = 2;
+        }
+        else if (projectPrioridad.Equals("Alta", StringComparison.OrdinalIgnoreCase))
+        {
+            nivel = 3;
+        }
+        else
+        {
+        
+            ModelState.AddModelError(string.Empty, "El nivel de prioridad debe ser 'baja', 'media' o 'alta'.");
+            return Page(); 
+        }
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                Console.WriteLine("Conexión abierta con éxito.");
+
+                // Consulta SQL para insertar los valores
+                string query = "INSERT INTO Prioridad (Nivel, TipoPrioridad) VALUES (@Nivel, @TipoPrioridad)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nivel", nivel); 
+                    command.Parameters.AddWithValue("@TipoPrioridad", projectPrioridad); 
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine($"Número de filas afectadas: {rowsAffected}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error en la base de datos: {ex.Message}");
+            ModelState.AddModelError(string.Empty, "Hubo un error al intentar guardar los datos en la base de datos.");
+            return Page();
+        }
+
+        Console.WriteLine("Datos guardados con éxito.");
+        return RedirectToPage(); 
+    }
+
+
+
+    public IActionResult OnPostEliminarPrioridad(String projectTipoPrioridadEli)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "DELETE FROM Prioridad WHERE TipoPrioridad = @TipoPrioridad";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@TipoPrioridad", projectTipoPrioridadEli);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        return RedirectToPage();
+    }
+    public IActionResult OnPostGuardarTiposPagos(string projectTipoPago, string projectDescripPago)
+    {
+        
+    
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        try
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                Console.WriteLine("Conexión abierta con éxito.");
+
+                string query = "INSERT INTO TipoPago (tipoPago, Descripcion) VALUES (@tipoPago, @Descripcion)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@tipoPago", projectTipoPago); // Usar la variable nivel
+                    command.Parameters.AddWithValue("@Descripcion", projectDescripPago); // Usar projectPrioridad
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    Console.WriteLine($"Número de filas afectadas: {rowsAffected}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error en la base de datos: {ex.Message}");
+            ModelState.AddModelError(string.Empty, "Hubo un error al intentar guardar los datos en la base de datos.");
+            return Page();
+        }
+
+        Console.WriteLine("Datos guardados con éxito.");
+        return RedirectToPage(); 
+    }
+
+    public IActionResult OnPostEliminarTiposPagos(String projectTipoPagoEli)
+    {
+
+        string connectionString = _configuration.GetConnectionString("DefaultConnection");
+
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            string query = "DELETE FROM TipoPago WHERE tipoPago = @tipoPago";
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@tipoPago", projectTipoPagoEli);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        return RedirectToPage();
+    }
 }
 
 

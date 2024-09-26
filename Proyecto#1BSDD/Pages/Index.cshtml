@@ -782,16 +782,17 @@
             </div>
             <div class="modal-body">
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
-                <form method="post" asp-page-handler="GuardarUsuario">
+                <form method="post" asp-page-handler="GuardarPrioridad">
                     <!--Hacer un apartado para seleccionar bodegas,la cedula del empleado y del cliente-->
                     <div class="CodigoPrioridadEli">
-                        <label for="projectPrioridadEli" class="form-label">Asigne una prioridad</label>
-                        <select name="projectPrioridadEli" id="projectPrioridadEli">
+                        <label for="projectPrioridad" class="form-label">Asigne una prioridad</label>
+                        <select name="projectPrioridad" id="projectPrioridad">
                             <option value="Baja">Baja</option>
                             <option value="Media">Media</option>
                             <option value="Alta">Alta</option>
                         </select>
                     </div>
+
 
                     <button type="submit" class="btn btn-primary">Agregar prioridad</button>
                 </form>
@@ -818,15 +819,20 @@
             </div>
             <div class="modal-body">
                 <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
-                <form method="post" asp-page-handler="GuardarUsuario">
+                <form method="post" asp-page-handler="GuardarTiposCaso">
                     <!--Hacer un apartado para seleccionar bodegas,la cedula del empleado y del cliente-->
                     <div class="nombreTipoCasoEli">
-                        <label for="projectTipoCasoEli" class="form-label">Asigne un tipo de caso</label>
-                        <select name="projectTipoCasoEli" id="projectTipoCasoEli">
+                        <label for="projectTipoCaso" class="form-label">Asigne un tipo de caso</label>
+                        <select name="projectTipoCaso" id="projectTipoCaso">
                             <option value="Reclamo">Reclamo</option>
                             <option value="Garantia">Garantia</option>
                             <option value="Devolucion">Devolucion</option>
                         </select>
+                    </div>
+                    <div class="DescripciontipoCaso">
+                        <label for="projectDescripcionCaso" class="form-label">Describa su caso</label>
+                        <textarea class="form-control" id="projectDescripcionCaso" name="projectDescripcionCaso" rows="3" required></textarea>
+
                     </div>
 
                     <button type="submit" class="btn btn-primary">Agregar tipo de caso</button>
@@ -893,7 +899,6 @@
     </div>
 </div>
 <br />
-
 <div class="modal fade show" id="modalPuesto" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true" style="display: @(Model.ShowModal48 ? "block" : "none");">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -904,9 +909,8 @@
                 </form>
             </div>
             <div class="modal-body">
-                <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
-                <form method="post" asp-page-handler="GuardarUsuario">
-                    <!--Hacer un apartado para seleccionar bodegas,la cedula del empleado y del cliente-->
+                <!-- Esto es para pasar la info a OnPostGuardarPuestos -->
+                <form method="post" asp-page-handler="GuardarPuestos">
                     <div class="nombrePuesto">
                         <label for="projectnombrePuesto" class="form-label">Asigne un nombre de puesto</label>
                         <select name="projectnombrePuesto" id="projectnombrePuesto">
@@ -917,9 +921,25 @@
                         </select>
                     </div>
 
+                    <div class="modalSalarioPuesto">
+                        <label for="projectSalarioPuesto" class="form-label">Asigne un salario del puesto</label>
+                        <input type="number" class="form-control" id="projectSalarioPuesto" name="projectSalarioPuesto" required step="0.01" />
+                    </div>
+
+                    <div class="tipoPuesto">
+                        <label for="projectTipoPuesto" class="form-label">Asigne un tipo de puesto</label>
+                        <select name="projectTipoPuesto" id="projectTipoPuesto">
+                            <option value="De fuerza">De fuerza</option>
+                            <option value="De inteligencia">De inteligencia</option>
+                            <option value="Administrativo">Administrativo</option>
+                            <option value="Empresarial">Empresarial</option>
+                        </select>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Agregar</button>
                 </form>
             </div>
+
             <div class="modal-footer">
                 <!-- Esto es para cerrar -->
                 <form method="post" asp-page-handler="CerrarModal">
@@ -929,6 +949,48 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade show" id="modalTipoPago" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true" style="display: @(Model.ShowModal48 ? "block" : "none");">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Agregar tipo de pago</h5>
+                <form method="post" asp-page-handler="CerrarModal">
+                    <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </form>
+            </div>
+            <div class="modal-body">
+                <!-- Esto es para pasar la info a OnPostGuardarPuestos -->
+                <form method="post" asp-page-handler="GuardarTiposPagos">
+                    <div class="nombrePuesto">
+                        <label for="projectTipoPago" class="form-label">Asigne un tipo de pago</label>
+                        <select name="projectTipoPago" id="projectTipoPago">
+                            <option value="Efectivo">Efectivo</option>
+                            <option value="Tarjeta"> Tarjeta</option>
+                            <option value="Sinpe">Sinpe</option>
+                        </select>
+                    </div>
+
+                    <div class="modalDescripcionPago">
+                        <label for="projectDescripPago" class="form-label">Asigne una descripcion del pago</label>
+                        <textarea class="form-control" id="projectDescripPago" name="projectDescripPago" rows="3" required></textarea>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <!-- Esto es para cerrar -->
+                <form method="post" asp-page-handler="CerrarModal">
+                    <button type="submit" class="btn btn-secondary">Cerrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 <br />
 
 
@@ -2253,77 +2315,63 @@
 </div>
 <br />
 
-<div class="modal fade show" id="modalPrioridad3" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true" style="display: @(Model.ShowModal46 ? "block" : "none");">
-    <div class="modal-dialog">
+<div class="modal fade" id="modalPrioridad3" tabindex="-1" role="dialog" aria-labelledby="modalPrioridad3Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Eliminar prioridad</h5>
-                <form method="post" asp-page-handler="CerrarModal">
-                    <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </form>
-            </div>
-            <div class="modal-body">
-                <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
-                <form method="post" asp-page-handler="GuardarUsuario">
-                    <!--Hacer un apartado para seleccionar bodegas,la cedula del empleado y del cliente-->
-                    <div class="CodigoPrioridadEli">
-                        <label for="projectPrioridadEli" class="form-label">Asigne una prioridad a eliminar</label>
-                        <select name="projectPrioridadEli" id="projectPrioridadEli">
-                            <option value="Baja">Baja</option>
-                            <option value="Media">Media</option>
-                            <option value="Alta">Alta</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Eliminar prioridad</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <!-- Esto es para cerrar -->
-                <form method="post" asp-page-handler="CerrarModal">
-                    <button type="submit" class="btn btn-secondary">Cerrar</button>
-                </form>
-            </div>
+            <form method="post" asp-page-handler="EliminarPrioridad">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPrioridad3Label">Eliminar prioridad</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="projectTipoPrioridadEli" class="form-label">Nombre de la prioridad</label>
+                    <select id="projectTipoPrioridadEli" name="projectTipoPrioridadEli" class="form-select" required>
+                        <option value="">Seleccionar una prioridad...</option>
+                        @foreach (var TipoPrioridad in Model.Prioridades)
+                        {
+                            <option value="@TipoPrioridad">@TipoPrioridad</option>
+                        }
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 <br />
-
-<div class="modal fade show" id="modalTipoCaso3" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true" style="display: @(Model.ShowModal47 ? "block" : "none");">
-    <div class="modal-dialog">
+<div class="modal fade" id="modalTipoCaso3" tabindex="-1" role="dialog" aria-labelledby="modalmodalTipoCaso3Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Eliminar tipo de caso</h5>
-                <form method="post" asp-page-handler="CerrarModal">
-                    <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </form>
-            </div>
-            <div class="modal-body">
-                <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
-                <form method="post" asp-page-handler="GuardarUsuario">
-                    <!--Hacer un apartado para seleccionar bodegas,la cedula del empleado y del cliente-->
-                    <div class="nombreTipoCasoEli">
-                        <label for="projectTipoCasoEli" class="form-label">Asigne un tipo de caso a eliminar</label>
-                        <select name="projectTipoCasoEli" id="projectTipoCasoEli">
-                            <option value="Reclamo">Reclamo</option>
-                            <option value="Garantia">Garantia</option>
-                            <option value="Devolucion">Devolucion</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Eliminar tipo de caso</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <!-- Esto es para cerrar -->
-                <form method="post" asp-page-handler="CerrarModal">
-                    <button type="submit" class="btn btn-secondary">Cerrar</button>
-                </form>
-            </div>
+            <form method="post" asp-page-handler="EliminarTiposCaso">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalmodalTipoCaso3Label">Eliminar tipo de caso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="projectTipoEstadoEli" class="form-label">Nombre del tipo caso</label>
+                    <select id="projectTipoEstadoEli" name="projectTipoEstadoEli" class="form-select" required>
+                        <option value="">Seleccionar un tipo de estado.</option>
+                        @foreach (var Tipocaso in Model.TipoCasos)
+                        {
+                            <option value="@Tipocaso">@Tipocaso</option>
+                        }
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-<br />
 
 
 <div class="modal fade show" id="modalProbabilidad3" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true" style="display: @(Model.ShowModal48 ? "block" : "none");">
@@ -2363,45 +2411,65 @@
 </div>
 <br />
 
-<div class="modal fade show" id="modalPuesto3" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true" style="display: @(Model.ShowModal48 ? "block" : "none");">
-    <div class="modal-dialog">
+<div class="modal fade" id="modalPuesto3" tabindex="-1" role="dialog" aria-labelledby="modalPuesto3Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalLabel">Eliminar puesto</h5>
-                <form method="post" asp-page-handler="CerrarModal">
-                    <button type="submit" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </form>
-            </div>
-            <div class="modal-body">
-                <!-- Esto es para pasar la info a OnPostGuardarUsuario -->
-                <form method="post" asp-page-handler="GuardarUsuario">
-                    <!--Hacer un apartado para seleccionar bodegas,la cedula del empleado y del cliente-->
-                    <div class="nombrePuesto">
-                        <label for="projectnombrePuesto" class="form-label">Asigne un nombre de puesto a eliminar</label>
-                        <select name="projectnombrePuesto" id="projectnombrePuesto">
-                            <option value="Electricista">Electricista</option>
-                            <option value="Ingeniero Industrial">Ingeniero Industrial</option>
-                            <option value="Asistente">Asistente</option>
-                            <option value="Empacador">Empacador</option>
-                        </select>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Eliminar</button>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <!-- Esto es para cerrar -->
-                <form method="post" asp-page-handler="CerrarModal">
-                    <button type="submit" class="btn btn-secondary">Cerrar</button>
-                </form>
-            </div>
+            <form method="post" asp-page-handler="EliminarPuestos">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPuesto3Label">Eliminar puesto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="projectNombrePEli" class="form-label">Nombre del puesto</label>
+                    <select id="projectNombrePEli" name="projectNombrePEli" class="form-select" required>
+                        <option value="">Seleccionar un puesto.</option>
+                        @foreach (var Nombre in Model.Puestos)
+                        {
+                            <option value="@Nombre">@Nombre</option>
+                        }
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 <br />
 
 
-
+<div class="modal fade" id="modalTipoPago3" tabindex="-1" role="dialog" aria-labelledby="modalTipoPago3Label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" asp-page-handler="EliminarTiposPagos">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTipoPago3Label">Eliminar tipo de pago</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <label for="projectTipoPagoEli" class="form-label">Nombre del tipo de pago</label>
+                    <select id="projectTipoPagoEli" name="projectTipoPagoEli" class="form-select" required>
+                        <option value="">Seleccionar un tipo de pago...</option>
+                        @foreach (var tipoPago in Model.TipoPagos)
+                        {
+                            <option value="@tipoPago">@tipoPago</option>
+                        }
+                    </select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-danger">Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 
 
