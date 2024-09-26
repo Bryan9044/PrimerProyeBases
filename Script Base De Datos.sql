@@ -2,6 +2,10 @@ CREATE DATABASE ERP
 GO
 USE ERP
 GO
+USE ERP;
+GO
+
+
 
 CREATE TABLE Departamento (
 	Codigo VARCHAR(15) NOT NULL,
@@ -100,8 +104,6 @@ CREATE TABLE Zona (
 CREATE TABLE Sector (
 	Nombre VARCHAR(20) UNIQUE NOT NULL,
 	Descripcion VARCHAR(200),
-	ValorMercado FLOAT,
-	IngresosAnuales FLOAT,
 	PRIMARY KEY (Nombre)
 )
 
@@ -254,3 +256,40 @@ CREATE TABLE ListaCotizacion (
 	FOREIGN KEY (CodigoCotizacion) REFERENCES Cotizacion(Codigo),
 )
 
+CREATE TABLE Estado(
+	TipoEstado VARCHAR(20) NOT NULL,
+	Descripcion VARCHAR(200) NOT NULL,
+	PRIMARY KEY (TipoEstado)
+)
+
+CREATE TABLE Probabilidad (
+	Porcentaje FLOAT,
+	ProbabilidadEstimada VARCHAR(20),
+	PRIMARY KEY (Porcentaje)
+)
+
+CREATE TABLE Prioridad(
+	Nivel INT NOT NULL,
+	TipoPrioridad VARCHAR(20) NOT NULL,
+	PRIMARY KEY (TipoPrioridad)
+)
+
+
+CREATE TABLE TipoCaso(
+	Tipocaso VARCHAR(20) NOT NULL,
+	Descripcion VARCHAR(200) NOT NULL,
+	PRIMARY KEY (Tipocaso)
+)
+
+CREATE TABLE Puesto(
+	TipoPuesto VARCHAR(20) NOT NULL,
+	Salario DECIMAL NOT NULL,
+	Descripcion VARCHAR(200) NOT NULL,
+	PRIMARY KEY (TipoPuesto)
+)
+
+CREATE TABLE TipoPago(
+	tipoPago VARCHAR(20) NOT NULL,
+	Descripcion VARCHAR(200) NOT NULL,
+	PRIMARY KEY(tipoPago)
+)
