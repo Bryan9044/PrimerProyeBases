@@ -22,11 +22,11 @@ CREATE TABLE Planilla (
 	PRIMARY KEY(CodigoPlanilla)
 )
 
-CREATE TABLE Puesto (
-	Nombre VARCHAR(20) NOT NULL,
-	Salario FLOAT NOT NULL,
+CREATE TABLE Puesto(
 	TipoPuesto VARCHAR(20) NOT NULL,
-	PRIMARY KEY (Nombre)
+	Salario DECIMAL NOT NULL,
+	Descripcion VARCHAR(200) NOT NULL,
+	PRIMARY KEY (TipoPuesto)
 )
 
 CREATE TABLE Empleado (
@@ -74,7 +74,6 @@ CREATE TABLE Familia (
 	CodigoFamilia VARCHAR(15) NOT NULL,
 	Nombre VARCHAR(20) NOT NULL,
 	Descripcion VARCHAR(200),
-	Activo TINYINT NOT NULL,
 	PRIMARY KEY(CodigoFamilia)
 )
 
@@ -90,7 +89,6 @@ CREATE TABLE Articulo (
 	Nombre VARCHAR(20) NOT NULL,
 	Peso FLOAT NOT NULL,
 	Descripcion VARCHAR(200),
-	Activo TINYINT NOT NULL,
 	PRIMARY KEY (Codigo)
 )
 
@@ -162,7 +160,7 @@ CREATE TABLE ZonaCotizacion (
 )
 
 CREATE TABLE SectorCliente (
-	NombreZona VARCHAR(20) NOT NULL,
+	NombreSector VARCHAR(20) NOT NULL,
 	CedulaCliente VARCHAR(9) NOT NULL,
 	PRIMARY KEY (NombreZona,CedulaCliente),
 	FOREIGN KEY (NombreZona) REFERENCES Sector(Nombre),
@@ -279,13 +277,6 @@ CREATE TABLE TipoCaso(
 	Tipocaso VARCHAR(20) NOT NULL,
 	Descripcion VARCHAR(200) NOT NULL,
 	PRIMARY KEY (Tipocaso)
-)
-
-CREATE TABLE Puesto(
-	TipoPuesto VARCHAR(20) NOT NULL,
-	Salario DECIMAL NOT NULL,
-	Descripcion VARCHAR(200) NOT NULL,
-	PRIMARY KEY (TipoPuesto)
 )
 
 CREATE TABLE TipoPago(
